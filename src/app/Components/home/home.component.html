@@ -1,0 +1,172 @@
+
+  <mat-toolbar class="toolbar">
+    <h1 class="toolbar-title">ANGELO LORENSI</h1>
+    <div class="toolbar-links">
+      <a (click)="scrollToElement('home')" class="toolbar-links-text"><mat-icon>home</mat-icon>HOME</a>
+      <a (click)="scrollToElement('about')" class="toolbar-links-text"><mat-icon>person</mat-icon>SOBRE</a>
+      <a (click)="scrollToElement('skills')" class="toolbar-links-text"><mat-icon>settings</mat-icon>PROJETOS E SKILLS</a>
+      <a (click)="scrollToElement('contact')" class="toolbar-links-text"><mat-icon>phone</mat-icon>CONTATO</a>
+    </div>
+
+    <div class="toolbar-menu">
+      <button class="toolbar-menu-btn" mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="scrollToElement('home')" class="toolbar-menu-links-text"><mat-icon>home</mat-icon>HOME</button>
+        <button mat-menu-item (click)="scrollToElement('about')" class="toolbar-menu-links-text"><mat-icon>person</mat-icon>SOBRE</button>
+        <button mat-menu-item (click)="scrollToElement('skills')" class="toolbar-menu-links-text"><mat-icon>settings</mat-icon>PROJETOS E SKILLS</button>
+        <button mat-menu-item (click)="scrollToElement('contact')" class="toolbar-menu-links-text"><mat-icon>phone</mat-icon>CONTATO</button>
+      </mat-menu>
+    </div>
+  </mat-toolbar>
+
+  <div id="home" class="page1">
+    <div class="page1-title">
+      <h1 class="page1-title-title">Olá, Eu sou Angelo Lorensi.</h1>
+      <h2 class="page1-title-subtitle">Full-Stack Developer</h2>
+    </div>
+    <mat-card class="contact-me">Entrar em contato</mat-card>
+  </div>
+
+  <div id="about" class="page2">
+    <div class="page2-left">
+      <h2 class="page2-left-title">Sobre mim</h2>
+      <p class="page2-left-description">
+        Olá, meu nome é Angelo Lorensi e eu sou um desenvolvedor de software
+        Full-Stack, <br />
+        Possuo experiência em Angular construindo interfaces de usuário intuitivas
+        e responsivas,<br />
+        utilizando os recursos mais recentes da estrutura. Domino os princípios de
+        design de software <br />
+        e implemento as melhores práticas de arquitetura, garantindo a
+        escalabilidade e a manutenibilidade.<br />
+        Tenho habilidades desenvolvendo back-end com Java, com conhecimentos em
+        Spring Boot.<br />
+        Implantando APIs eficientes, garantindo o desempenho e a segurança dos
+        sistemas.<br />
+        Minha experiencia desenvolvendo de aplicativos Android também é
+        notável.<br />
+        Sou capaz de criar aplicativos móveis de alta qualidade, com uma interface
+        <br />
+        de usuário atraente e recursos avançados.<br />
+        Estou familiarizado com as diretrizes e práticas recomendadas do Android,
+        <br />
+        garantindo a compatibilidade e a experiência do usuário ideal em
+        dispositivos Android.
+      </p>
+      <div class="page2-left-btns">
+        <button class="page2-left-btns-btn">Resume</button>
+        <button class="page2-left-btns-btn">Me Contrate</button>
+      </div>
+    </div>
+    <div class="page2-right">
+      <img class="page2-right-img" src="/assets/img/programador.png" />
+    </div>
+  </div>
+
+  <div id="skills" class="page3">
+    <div class="page3-title">
+      <h1 class="page3-title-title">Habilidades Técnicas</h1>
+    </div>
+    <div class="page3-cards">
+      <mat-card class="page3-cards-backend">
+        <h1 class="page3-cards-title">Back-End e Mobile</h1>
+        <p>Java</p>
+        <p>Spring Boot</p>
+        <p>Javascript</p>
+        <p>Typescript</p>
+        <p>Android</p>
+        <p>Firebase</p>
+        <p>SQL</p>
+      </mat-card>
+      <mat-card class="page3-cards-frontend">
+        <h1 class="page3-cards-title">Front-End</h1>
+        <p>Angular</p>
+        <p>Material UI</p>
+        <p>HTML5</p>
+        <p>CSS</p>
+        <p>Bootstrap</p>
+      </mat-card>
+      <mat-card class="page3-cards-tools">
+        <h1 class="page3-cards-title">Ferramentas</h1>
+        <p>VS code</p>
+        <p>InteliJ</p>
+        <p>Android Studio</p>
+        <p>MySql</p>
+        <p>Figma</p>
+        <p>Git</p>
+        <p>Bash</p>
+      </mat-card>
+    </div>
+  </div>
+
+  <div id="projects" class="page4">
+    <div class="page4-title">
+      <h1 class="page4-title-title">Projetos</h1>
+    </div>
+
+    <div class="page4-projects">
+      <li *ngFor="let project of allProjects">
+        <mat-card class="page4-projects-card">
+          <img
+            mat-card-image
+            class="page4-projects-img"
+            src="{{ project.image }}"
+          />
+          <mat-card-content class="page4-projects-text">
+            <h1 class="page4-projects-text-title">{{ project.title }}</h1>
+            <p class="page4-projects-text-description">
+              {{ project.description }}
+            </p>
+          </mat-card-content>
+          <mat-card-actions class="page4-btns">
+            <button class="page4-btns-btn" mat-button>
+              <mat-icon>travel_explore</mat-icon> Demo
+            </button>
+            <button class="page4-btns-btn" mat-button>
+              <mat-icon>code</mat-icon>Código
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </li>
+    </div>
+  </div>
+
+  <div id="contact" class="page5">
+    <div class="page5-title">
+      <h1 class="page5-title-title">Entre em contato</h1>
+    </div>
+    <div class="page5-contact">
+      <div class="page5-contact-info">
+        <h1 class="page5-contact-info-title">TELEFONE:</h1>
+        <p class="page5-contact-info-text">55 98462-2958</p>
+        <h1 class="page5-contact-info-title">EMAIL:</h1>
+        <p class="page5-contact-info-text">angelolorensi@gmail.com</p>
+      </div>
+      <div class="page5-contact-email">
+        <form class="page5-contact-form" (submit)="sendEmail()" [formGroup]="form">
+          <h2 class="page5-contact-form-title">Nome:</h2>
+          <mat-form-field color="primary" class="page5-contact-email-form-name" appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput type="text" formControlName="name" required>
+          </mat-form-field>
+          <h2 class="page5-contact-form-title">Endereço de email:</h2>
+          <mat-form-field color="primary" class="page5-contact-email-form-email" appearance="outline">
+            <mat-label>Endereço de email</mat-label>
+            <input matInput type="email" formControlName="email" required>
+          </mat-form-field>
+          <h2 class="page5-contact-form-title">Titulo:</h2>
+          <mat-form-field color="primary" class="page5-contact-email-form-subject" appearance="outline">
+            <mat-label>Titulo</mat-label>
+            <input matInput type="text" formControlName="subject" required>
+          </mat-form-field>
+          <h2 class="page5-contact-form-title">Mensagem:</h2>
+          <mat-form-field color="primary" class="page5-contact-email-form-message" appearance="outline">
+            <mat-label>Mensagem</mat-label>
+            <textarea class="page5-contact-email-form-message" matInput type="text" formControlName="message" required></textarea>
+          </mat-form-field>
+          <h1><br></h1>
+          <button class="page5-contact-form-btn" type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
