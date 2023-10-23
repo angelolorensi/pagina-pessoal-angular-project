@@ -264,7 +264,12 @@
 
 .page4-projects-card{
   width: 750px;
+  height: 580px;
   background-color: #24426e ;
+}
+
+.page4-projects-img{
+  max-height: 390px;
 }
 
 .page4-projects-text{

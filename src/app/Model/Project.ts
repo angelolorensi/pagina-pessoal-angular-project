@@ -2,5 +2,6 @@ export interface Project{
   image:string;
   title:string;
   description:string;
-  link:string;
+  repositoryLink:string;
+  deployLink:string;
 }
